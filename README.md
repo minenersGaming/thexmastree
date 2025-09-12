@@ -1,2 +1,4 @@
 # thexmastree
-A Project For TUCMC 68
+
+A Draft for Christmas 2025
+Made by TUCMC 68
