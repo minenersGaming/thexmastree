@@ -1,12 +1,5 @@
 const Home = () => {
   return <>
-  <div className="flex flex-col">
-    <div style={{
-      background: "rgba(0, 28, 29, 1)",
-      height: "8vh",
-    }} className="flex bg-black p-3 items-center">
-      <img draggable="false" src="src/assets/logo.svg" style={{height: "38px"}} className="px-3"></img>
-    </div>
 
     <div className="items-center flex-col justify-center"
         style={{
@@ -87,7 +80,6 @@ const Home = () => {
         </div>
 
     </div>
-   </div>
   </>};
 
 export default Home;
