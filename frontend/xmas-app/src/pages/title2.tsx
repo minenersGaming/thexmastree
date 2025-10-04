@@ -1,4 +1,4 @@
-const Home = () => {
+const Title2 = () => {
   return <>
   <div className="flex flex-col">
     <div style={{
@@ -90,4 +90,4 @@ const Home = () => {
    </div>
   </>};
 
-export default Home;
+export default Title2;
