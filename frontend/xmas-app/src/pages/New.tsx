@@ -1,0 +1,103 @@
+import {useState} from "react";
+
+const BACKGROUND = ["60thbldg", "55thbldg"];
+const BACKGROUND_NAME = ["60TH YEAR BLD.", "55TH YEAR BLD."]
+
+/** !!!!! TEMPORARY FOR PRE-DEV !!!!! */
+const SCALE = ["1.95", "1.38"]
+const TRANS_X = ["-21%", "-3.2%"]
+const TRANS_Y = ["-3.4vh", "-2.5%"]
+
+const MOON_X = ["55%", "-35%"]
+const MOON_Y = ["5%", "-18%"]
+
+const New = () => {
+
+  const [bgIndex, setBgIndex] = useState(0);
+  
+  const prevBg = () => {
+    setBgIndex((prev) => prev === 0 ? BACKGROUND.length - 1 : prev - 1);
+  }
+
+  const nextBg = () => {
+    setBgIndex((prev) => (prev + 1) % BACKGROUND.length);
+  }
+
+  const bgCurrent  = BACKGROUND[bgIndex];
+  const bgCurrentName  = BACKGROUND_NAME[bgIndex];
+  const bgCurrentScale = SCALE[bgIndex];
+  const bgCurrentTransX = TRANS_X[bgIndex];
+  const bgCurrentTransY = TRANS_Y[bgIndex];
+  const moonX = MOON_X[bgIndex];
+  const moonY = MOON_Y[bgIndex];
+
+  return <>
+    <div id="common-bg" className="fixed flex flex-col justify-center items-center bottom right" style={{overflow: "hidden", width: "auto"}}>
+      <img draggable="false" className="z-[5] w-auto min-h-[1500px]" src={`/src/assets/background/${bgCurrent}.svg`} style={{
+        scale: bgCurrentScale,
+        transform: `translate(${bgCurrentTransX}, ${bgCurrentTransY})`,
+      }}></img>
+
+ 
+        <img className="fixed z-[1] transition-all" style={{
+          top: moonY,
+          left: moonX,
+      }}
+        src="/src/assets/moon.svg"></img>
+
+      <div className="flex justify-center fixed z-20 w-[100vw] translate-y-[-3%]">
+        <img draggable="false" src="/src/assets/tree.svg"></img>
+      </div>
+      <div id="ground" className="fixed bg-white bottom z-10 w-[100vw]"></div>
+      <style>
+        {`
+
+        #ground {
+          height: 26vh;
+          }
+        @media (max-width: 385px) {
+          #ground {
+            height: 36vh;
+          }
+        `}
+      </style>
+      <div className="fixed bottom left-0 z-30 w-[100vw] h-[92vh]">
+        <div className="flex flex-col justify-between h-full">
+          <div className="z-[80] flex items-center jsutify-around flex-col">
+            <span className="text-grad-effect grad-intro italic font-inter">choose your</span>
+            <span className="text-grad-effect grad-intro font-bold text-4xl font-inter">BACKGROUND</span>
+          </div>
+          <div className="flex flex-col pb-10">
+            <div className="z-50 flex flex-row items-center justify-center">
+                <button onClick={prevBg}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="35" height="39" viewBox="0 0 35 39" fill="none">
+                    <path d="M21.875 8.05921L11.6667 19.3421L21.875 30.625" stroke="#C53F39" stroke-width="2.76316" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+
+                <span className="font-bold text-3xl text-grad-effect grad-commonred text-center" style={{width:"260px",}}>
+                  {bgCurrentName}
+                </span>
+                
+                <button onClick={nextBg}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="35" height="39" viewBox="0 0 35 39" fill="none">
+                    <path d="M13.125 8.05921L23.3333 19.3421L13.125 30.625" stroke="#C53F39" stroke-width="2.76316" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+              <div className="flex justify-center p-2">
+                <button className="grad-commonred p-3 px-6 rounded-full shadow-md hover:shadow-lg hover:scale-105 transition-all">
+                  <div className="flex flex-row">
+                    <span className="text-white font-inter pl-1">NEXT</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><path d="M7.15332 4.375L12.695 10.5L7.15332 16.625" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+              </button>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </>
+  ;};
+
+export default New;

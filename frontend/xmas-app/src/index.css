@@ -8,3 +8,73 @@
 body {
   font-family: 'Inter', sans-serif;
 }
+
+#facade {
+    display: none;
+}
+
+ @media (min-width: 426px) {
+    #facade {
+      display: flex;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.9);
+      color: white;
+      font-family: "Noto Sans Thai", sans-serif;
+      font-size: 20px;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      text-align: center;
+    }
+  }
+
+#common-bg {
+  width: 100vw;
+  height: 94vh;
+  overflow: hidden;
+  background: var(--sky-intro, radial-gradient(89.44% 41.26% at 50% 54.46%, #00504C 0%, #012E34 100%));
+  position: relative;
+}
+
+.sky-intro {
+  background: radial-gradient(89.44% 41.26% at 50% 54.46%, #00504C 0%, #012E34 100%);
+}
+
+.grad-intro {
+  background: linear-gradient(180deg, #FFF 12.81%, rgba(255, 255, 255, 0.00) 134.22%);  
+}
+
+.grad-commonred {
+    background: linear-gradient(264deg, #C95433 -3.31%, #C9333C 43.63%, #901E25 98.81%), #103426;
+}
+
+
+.text-grad-effect {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.font-inter {
+    font-family: "Inter";
+}
+
+.font-noto-sans-thai {
+    font-family: 'Noto Sans Thai';
+}
+
+.bottom {
+    bottom: 0;
+}
+
+.right {
+    right: 0;
+}
+
+.text-ivory {
+    color: #FFFAE0;
+}
