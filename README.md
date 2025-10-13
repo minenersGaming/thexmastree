@@ -1,10 +1,12 @@
 # thexmastree
 
-A Draft for Christmas 2025
-Made by TUCMC 68
+A Draft for Christmas Event 2025
 
-To implement this on a local device, it is recommended to run this in terminal.
+
+To implement this on a local device, it is recommended to run this on terminal.
 ```bash
 cd frontend/xmas-tree
 npm run dev
 ```
+
+Made by TUCMC 68
