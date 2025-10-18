@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -21,7 +22,7 @@ body {
       left: 0;
       width: 100vw;
       height: 100vh;
-      background: rgba(0, 0, 0, 0.9);
+      background: rgba(0, 0, 0, 0.5);
       color: white;
       font-family: "Noto Sans Thai", sans-serif;
       font-size: 20px;
@@ -40,6 +41,13 @@ body {
   position: relative;
 }
 
+.common-bg {
+  width: 100vw;
+  height: 94vh;
+  overflow: hidden;
+  background: var(--sky-intro, radial-gradient(89.44% 41.26% at 50% 54.46%, #00504C 0%, #012E34 100%));
+  position: relative;
+}
 .sky-intro {
   background: radial-gradient(89.44% 41.26% at 50% 54.46%, #00504C 0%, #012E34 100%);
 }
@@ -77,4 +85,18 @@ body {
 
 .text-ivory {
     color: #FFFAE0;
+}
+
+.anim-intro-fadeIn {
+  opacity: 0;
+  animation: fadeIn 1.5s ease-out forwards; 
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

@@ -1,3 +1,14 @@
+/**
+== CHECK LIST ==
+[/] Title
+[/] Background
+[X] Preview
+[X] Creator View
+[X] Decorate + Self Preview
+[X] Visitor View
+[X] Gift Received
+[/] Error
+ */
 
 const Home = () => {
   return <>
@@ -5,7 +16,7 @@ const Home = () => {
     <div className="items-center flex-col justify-center" id="common-bg"
       >
     <div className="w-auto h-auto pt-5 flex items-center justify-center">
-      <div>
+      <div className="anim-intro-fadeIn">
         <img draggable="false" src="src/assets/titletext.svg" style={{
             maxHeight: "16vh",
         }}></img>

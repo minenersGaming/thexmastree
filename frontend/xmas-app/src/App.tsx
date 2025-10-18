@@ -3,6 +3,7 @@ import Title from "./pages/Title";
 import New from "./pages/New.tsx";
 import Capture from "./pages/Capture";
 import Title2 from "./pages/title2";
+import Tree from "./pages/handleTree";
 
 const App = () => {
   return (
@@ -10,16 +11,17 @@ const App = () => {
     <div style={{
       background: "rgba(0, 28, 29, 1)",
       height: "6vh",
-    }} className="flex bg-black p-3 items-center z-[6969]">
-      <img draggable="false" src="/src/assets/logo.svg" style={{height: "3vw", minHeight: "22px",}} className="px-3"></img>
+    }} className="flex min-h-[40px] p-3 items-center z-[6969]">
+      <img draggable="false" src="/src/assets/logo.svg" style={{height: "3vw", minHeight: "22px", maxHeight: "32px"}} className="px-3"></img>
     </div>
 
     <Router>
       <Routes>
         <Route path="/" element={<Title />} />
-        <Route path="/Capture" element={<Capture />} />
+        <Route path="/capture" element={<Capture />} />
         <Route path="/creator/create" element={<New />} />
         <Route path="/title" element={<Title2 />} />
+        <Route path="/t/:id" element={<Tree />} />
         {/* 404 Page */}
       <Route path="*" element={
         <div className="items-center flex-col justify-center" id="common-bg">
@@ -55,12 +57,12 @@ const App = () => {
       </Routes>
     </Router>
 
-      <div id="facade">
+      {/**<div id="facade">
         <div className="flex flex-col">
           <p>โปรดรับชม Demo บนหน้าจอมือถือ</p>
         <p>(แนะนำที่ 393 x 852 / iPhone 16)</p>
         </div>
-      </div>
+      </div>*/}
 
     </div>
     

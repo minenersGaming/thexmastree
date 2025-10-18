@@ -1,12 +1,14 @@
 import {useState} from "react";
+import Background from "./Background";
 
 const BACKGROUND = ["60thbldg", "55thbldg"];
 const BACKGROUND_NAME = ["60TH YEAR BLD.", "55TH YEAR BLD."]
 
-/** !!!!! TEMPORARY FOR PRE-DEV !!!!! */
-const SCALE = ["1.95", "1.38"]
-const TRANS_X = ["-21%", "-3.2%"]
-const TRANS_Y = ["-3.4vh", "-2.5%"]
+/** !!!!! TEMPORARY FOR PRE-DEV (caused by inconsistency in media dimensions) !!!!! */
+const WIDTH = ["790px", "540px"]
+const HEIGHT = ["auto", "190px"]
+const TRANS_X = ["-21%", "-5%"]
+const TRANS_Y = ["-8vh", "-9vh"]
 
 const MOON_X = ["55%", "-35%"]
 const MOON_Y = ["5%", "-18%"]
@@ -25,16 +27,20 @@ const New = () => {
 
   const bgCurrent  = BACKGROUND[bgIndex];
   const bgCurrentName  = BACKGROUND_NAME[bgIndex];
-  const bgCurrentScale = SCALE[bgIndex];
+  const bgCurrentWidth = WIDTH[bgIndex];
+  const bgCurrentHeight = HEIGHT[bgIndex];
   const bgCurrentTransX = TRANS_X[bgIndex];
   const bgCurrentTransY = TRANS_Y[bgIndex];
   const moonX = MOON_X[bgIndex];
   const moonY = MOON_Y[bgIndex];
 
   return <>
-    <div id="common-bg" className="fixed flex flex-col justify-center items-center bottom right" style={{overflow: "hidden", width: "auto"}}>
-      <img draggable="false" className="z-[5] w-auto min-h-[1500px]" src={`/src/assets/background/${bgCurrent}.svg`} style={{
-        scale: bgCurrentScale,
+    <div id="common-bg" className="fixed flex flex-col justify-center items-center bottom" style={{overflow: "hidden", width: "auto"}}>
+      
+      <Background var={bgIndex} />
+      {/**<img draggable="false" className="overflow-visible absolute z-[5] max-w-[none] object-cover" src={`/src/assets/background/${bgCurrent}.svg`} style={{
+        width: bgCurrentWidth,
+      	height: bgCurrentHeight,
         transform: `translate(${bgCurrentTransX}, ${bgCurrentTransY})`,
       }}></img>
 
@@ -43,15 +49,14 @@ const New = () => {
           top: moonY,
           left: moonX,
       }}
-        src="/src/assets/moon.svg"></img>
+        src="/src/assets/moon.svg"></img>**/}
 
-      <div className="flex justify-center fixed z-20 w-[100vw] translate-y-[-3%]">
+      <div className="flex justify-center fixed z-20 w-[100vw] translate-y-[-1vh]">
         <img draggable="false" src="/src/assets/tree.svg"></img>
       </div>
-      <div id="ground" className="fixed bg-white bottom z-10 w-[100vw]"></div>
-      <style>
+      <div id="ground" className="fixed bg-white bottom z-10 w-[100vw] h-[26vh]"></div>
+      {/**<style>
         {`
-
         #ground {
           height: 26vh;
           }
@@ -60,10 +65,10 @@ const New = () => {
             height: 36vh;
           }
         `}
-      </style>
+      </style>*/}
       <div className="fixed bottom left-0 z-30 w-[100vw] h-[92vh]">
         <div className="flex flex-col justify-between h-full">
-          <div className="z-[80] flex items-center jsutify-around flex-col">
+          <div className="anim-intro-fadeIn z-[80] flex items-center jsutify-around flex-col">
             <span className="text-grad-effect grad-intro italic font-inter">choose your</span>
             <span className="text-grad-effect grad-intro font-bold text-4xl font-inter">BACKGROUND</span>
           </div>
