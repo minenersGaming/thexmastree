@@ -7,16 +7,27 @@ const NAME = ["yellow","red","tuball","socks","cane","twobells"]
 type DecorOnTreeProps = {
     position: number;
     type: number;
+    display?: boolean;
+    sender?: string;
+    message?: string;
 };
 
-const DecorOnTree = ( {position, type}: DecorOnTreeProps ) => {
-    return (
+const DecorOnTree = ( {position, type, display, sender, message }: DecorOnTreeProps ) => {
+    if (display) {
+        return (<>
+
         <img src={`/src/assets/onTree/${NAME[type]}.svg`} className="absolute w-[55px] pointer-events-none z-[55]" style={{
             marginTop: MARGINTOP[position],
             marginLeft: MARGINLEFT[position],
             transform: `rotate(${ROTATION[position]})`,
           }}></img>
-    )
-}
+
+          
+        </>);
+    } else {
+    return (<></>
+        )
+    }
+};
 
 export default DecorOnTree;

@@ -4,7 +4,7 @@ import Tree from "./DecorTree.tsx";
 import Background from "./Background.tsx";
 
 
-//dummy data
+//dummy data, replace with API data later
 export const TREEDATA = {
   "id": "7uCMc",
   "background": 1,
@@ -29,7 +29,7 @@ export const TREEDATA = {
 
 const HandleTree = () => {
     const {id} = useParams();
-    if (id === "dummy") {
+    if (id === "dummy") { //for testing, delete later
         return (
             <div className="flex flex-col items-center justify-center common-bg text-ivory font-bold text-5xl font-noto-sans-thai">
               test

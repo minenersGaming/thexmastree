@@ -1,4 +1,6 @@
 import DecorOnTree from "./DecorOnTree";
+import { useState } from "react";
+
 
 type TreeProps = {
   treeData: {
@@ -15,20 +17,22 @@ type TreeProps = {
 };
 
 const Tree = ({ treeData }: TreeProps) => {
+
+
     return (<>
     <div>
       <div className="flex z-[50] w-full justify-center items-center absolute top-0 left-0 h-full pointer-events-none">
-        <img src="/src/assets/tree.svg" className="min-w-[362px] w-[362px] h-auto mt-[5vh] z-[50] pointer-events-none overflow-visible"></img>
+        <img draggable="false" src="/src/assets/tree.svg" className="min-w-[362px] w-[362px] h-auto mt-[5vh] z-[50] pointer-events-none overflow-visible"></img>
 
-      <DecorOnTree position={0} type={2} />
-      <DecorOnTree position={1} type={0} />
-      <DecorOnTree position={2} type={1} />
-      <DecorOnTree position={3} type={2} />
-      <DecorOnTree position={4} type={3} />
-      <DecorOnTree position={5} type={4} />
-      <DecorOnTree position={6} type={5} />
-      <DecorOnTree position={7} type={0} />
-      <DecorOnTree position={8} type={1} />
+      <DecorOnTree position={0} type={2} display={true}/>
+      <DecorOnTree position={1} type={0} display={true}/>
+      <DecorOnTree position={2} type={1} display={true}/>
+      <DecorOnTree position={3} type={2} display={true}/>
+      <DecorOnTree position={4} type={3} display={true}/>
+      <DecorOnTree position={5} type={4} display={true}/>
+      <DecorOnTree position={6} type={5} display={true}/>
+      <DecorOnTree position={7} type={0} display={true}/>
+      <DecorOnTree position={8} type={1} display={true}/>
       
       </div>
     </div>

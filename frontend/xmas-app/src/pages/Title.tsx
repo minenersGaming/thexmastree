@@ -9,6 +9,7 @@
 [X] Gift Received
 [/] Error
 */
+
 "use client";
 import { GoogleSignInButton } from "../components/GoogleSignInButton";
 import { Landing } from "../landing";
@@ -27,10 +28,10 @@ const Home = () => {
                   src="src/assets/titletext.svg"
                   className="max-h-[16vh]"
                 ></img>
-                <div className=" flex justify-center mt-[-90px] overflow-hidden">
+                <div className="transition-all flex justify-center mt-[-110px] 2xl:mt-[-100px] overflow-hidden">
                   <img
                     draggable="false"
-                    className="absolute min-w-[1800px]"
+                    className="transition-all absolute min-w-[1800px] 2xl:min-w-[2500px]"
                     id="text"
                     src="src/assets/titletree.svg"
                   />

@@ -30,7 +30,7 @@ const Background = ({ var: bgIndex }: { var: number }) => {
         <div className="bg-white z-[2] w-full h-[26vh]"></div>
       </div>
 
-      <img
+      <img draggable="false"
         className="fixed z-[1] transition-all"
         style={{
           top: moonY,
