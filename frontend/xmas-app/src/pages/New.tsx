@@ -1,38 +1,22 @@
 import {useState} from "react";
 import Background from "./Background";
 
-const BACKGROUND = ["60thbldg", "55thbldg"];
+/** น่าจะมีไฟล์แยก? */
 const BACKGROUND_NAME = ["60TH YEAR BLD.", "55TH YEAR BLD."]
-
-/** !!!!! TEMPORARY FOR PRE-DEV (caused by inconsistency in media dimensions) !!!!! */
-const WIDTH = ["790px", "540px"]
-const HEIGHT = ["auto", "190px"]
-const TRANS_X = ["-21%", "-5%"]
-const TRANS_Y = ["-8vh", "-9vh"]
-
-const MOON_X = ["55%", "-35%"]
-const MOON_Y = ["5%", "-18%"]
 
 const New = () => {
 
   const [bgIndex, setBgIndex] = useState(0);
   
   const prevBg = () => {
-    setBgIndex((prev) => prev === 0 ? BACKGROUND.length - 1 : prev - 1);
+    setBgIndex((prev) => prev === 0 ? BACKGROUND_NAME.length - 1 : prev - 1);
   }
 
   const nextBg = () => {
-    setBgIndex((prev) => (prev + 1) % BACKGROUND.length);
+    setBgIndex((prev) => (prev + 1) % BACKGROUND_NAME.length);
   }
 
-  const bgCurrent  = BACKGROUND[bgIndex];
-  const bgCurrentName  = BACKGROUND_NAME[bgIndex];
-  const bgCurrentWidth = WIDTH[bgIndex];
-  const bgCurrentHeight = HEIGHT[bgIndex];
-  const bgCurrentTransX = TRANS_X[bgIndex];
-  const bgCurrentTransY = TRANS_Y[bgIndex];
-  const moonX = MOON_X[bgIndex];
-  const moonY = MOON_Y[bgIndex];
+  const bgCurrentName = BACKGROUND_NAME[bgIndex];
 
   return <>
     <div id="common-bg" className="fixed flex flex-col justify-center items-center bottom" style={{overflow: "hidden", width: "auto"}}>
@@ -54,7 +38,8 @@ const New = () => {
       <div className="flex justify-center fixed z-20 w-[100vw] translate-y-[-1vh]">
         <img draggable="false" src="/src/assets/tree.svg"></img>
       </div>
-      <div id="ground" className="fixed bg-white bottom z-10 w-[100vw] h-[26vh]"></div>
+      {/** Here's the ground 
+       * <div id="ground" className="fixed bg-white bottom z-10 w-[100vw] h-[26vh]"></div>**/}
       {/**<style>
         {`
         #ground {

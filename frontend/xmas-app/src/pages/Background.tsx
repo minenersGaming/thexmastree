@@ -1,37 +1,47 @@
+// น่าจะมีไฟล์แยก? 
 const BACKGROUND = ["60thbldg", "55thbldg"];
 
-/** !!!!! TEMPORARY FOR PRE-DEV (caused by inconsistency in media dimensions) !!!!! */
-const WIDTH = ["790px", "540px"]
-const HEIGHT = ["auto", "190px"]
-const TRANS_X = ["-21%", "-5%"]
-const TRANS_Y = ["-8vh", "-9vh"]
+/** !!!!! TEMPORARY FOR PRE-REL. SESSION !!!!! */
+const WIDTH = ["790px", "500px"]
+//const HEIGHT = ["auto", "auto"]
 
-const MOON_X = ["55%", "-35%"]
-const MOON_Y = ["5%", "-18%"]
+const MOON_X = ["55vw", "-140px"];
+const MOON_Y = ["5vh", "-140px"];
 
 const Background = ({ var: bgIndex }: { var: number }) => {
-    const bgCurrent  = BACKGROUND[bgIndex];
-    const bgCurrentWidth = WIDTH[bgIndex];
-    const bgCurrentHeight = HEIGHT[bgIndex];
-    const bgCurrentTransX = TRANS_X[bgIndex];
-    const bgCurrentTransY = TRANS_Y[bgIndex];
-    const moonX = MOON_X[bgIndex];
-    const moonY = MOON_Y[bgIndex];
+  const bgCurrentWidth = WIDTH[bgIndex];
+  // const bgCurrentHeight = HEIGHT[bgIndex];
+  const bgCurrent = BACKGROUND[bgIndex];
+  const moonX = MOON_X[bgIndex];
+  const moonY = MOON_Y[bgIndex];
 
-    return <>
-        <img draggable="false" className="overflow-visible absolute z-[5] max-w-[none] object-cover" src={`/src/assets/background/${bgCurrent}.svg`} style={{
+  return (
+    <>
+      <div className="fixed bottom-0 z-[4] flex flex-col items-end w-full pointer-events-none">
+
+        <img
+          draggable="false"
+          className="relative z-[3] max-w-[none] overflow-visible"
+          src={`/src/assets/background/${bgCurrent}.svg`}
+          style={{
             width: bgCurrentWidth,
-            height: bgCurrentHeight,
-            transform: `translate(${bgCurrentTransX}, ${bgCurrentTransY})`,
-        }}></img>
+            height: "auto",
+          }}
+        />
 
-    
-            <img className="fixed z-[1] transition-all" style={{
-            top: moonY,
-            left: moonX,
+        <div className="bg-white z-[2] w-full h-[26vh]"></div>
+      </div>
+
+      <img
+        className="fixed z-[1] transition-all"
+        style={{
+          top: moonY,
+          left: moonX,
         }}
-            src="/src/assets/moon.svg"></img>
-            </>
-}
+        src="/src/assets/moon.svg"
+      />
+    </>
+  );
+};
 
 export default Background;

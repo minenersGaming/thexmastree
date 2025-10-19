@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Title from "./pages/Title";
 import New from "./pages/New.tsx";
 import Capture from "./pages/Capture";
-import Title2 from "./pages/title2";
 import Tree from "./pages/handleTree";
 
 const App = () => {
@@ -12,7 +11,7 @@ const App = () => {
       background: "rgba(0, 28, 29, 1)",
       height: "6vh",
     }} className="flex min-h-[40px] p-3 items-center z-[6969]">
-      <img draggable="false" src="/src/assets/logo.svg" style={{height: "3vw", minHeight: "22px", maxHeight: "32px"}} className="px-3"></img>
+      <img draggable="false" src="/src/assets/logo.svg" style={{height: "3vh", minHeight: "20px", maxHeight: "23px"}} className="pl-[5px]"></img>
     </div>
 
     <Router>
@@ -20,33 +19,22 @@ const App = () => {
         <Route path="/" element={<Title />} />
         <Route path="/capture" element={<Capture />} />
         <Route path="/creator/create" element={<New />} />
-        <Route path="/title" element={<Title2 />} />
         <Route path="/t/:id" element={<Tree />} />
         {/* 404 Page */}
       <Route path="*" element={
         <div className="items-center flex-col justify-center" id="common-bg">
-          <div className="flex flex-col items-center justify-center h-full shadow-2xl">
-            <img src="/src/assets/cane.svg" style={{
-              width: "182.065px",
-              height: "188.57px",
-              flexShrink: "0",
-            }}></img>
-            <p className="font-noto-sans-thai text-ivory" style={{
-              fontSize: "55.156px",
+          <div className="flex flex-col items-center justify-center h-full shadow-2xl ">
+            <img src="/src/assets/cane.svg" className="w-[182.065px] h-[188.57px] flex-shrink-0"></img>
+            <p className="font-noto-sans-thai text-ivory text-[55.156px] font-[700] " style={{
               fontStyle: "normal",
-              fontWeight: "700",
               lineHeight: "normal",
             }}>ERROR</p>
-            <p className="font-noto-sans-thai text-ivory" style={{
-              fontSize: "20px",
-              fontWeight: "700",
-            }}>This page cound not be found</p>
-              <a href="/"><button className="text-white p-3 rounded-full"
+            <p className="font-noto-sans-thai text-ivory font-[700] text-[20px]">
+              This page cound not be found</p>
+              <a href="/"><button className="text-white p-3 rounded-full mt-[13px] font-noto-sans-thai"
                 style={{
-                  marginTop:"13px",
                   background: "linear-gradient(180deg, rgba(255, 255, 255, 0.3) -20.73%, rgba(255, 255, 255, 0.3) 100%)",
                   backdropFilter: "blur(2px)",
-                  fontFamily: "Noto Sans Thai, sans-serif",
                 }}
               >
                   <h1 className="opacity-100">กลับสู่หน้าหลัก</h1>
