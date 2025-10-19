@@ -3,6 +3,7 @@ import Title from "./pages/Title";
 import New from "./pages/New.tsx";
 import Capture from "./pages/Capture";
 import Title2 from "./pages/title2";
+import { Landing } from './landing.tsx'
 
 const App = () => {
   return (
@@ -15,8 +16,9 @@ const App = () => {
     </div>
 
     <Router>
-      <Routes>
-        <Route path="/" element={<Title />} />
+      <Routes>    
+        <Route path="/" element={<Title/>} />
+
         <Route path="/Capture" element={<Capture />} />
         <Route path="/creator/create" element={<New />} />
         <Route path="/title" element={<Title2 />} />
