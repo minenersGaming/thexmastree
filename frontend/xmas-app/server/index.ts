@@ -11,8 +11,7 @@ app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const YOUR_CLIENT_ID =
-  "658351038879-079hr4ah2i2f1t869ce69ohusfg5drdj.apps.googleusercontent.com";
+const YOUR_CLIENT_ID ="658351038879-079hr4ah2i2f1t869ce69ohusfg5drdj.apps.googleusercontent.com";
 const YOUR_CLIENT_SECRET = "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";
 const YOUR_REDIRECT_URL = "http://localhost:3000/auth/google/callback";
 
