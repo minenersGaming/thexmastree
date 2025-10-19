@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Title from "./pages/Title";
 import New from "./pages/New.tsx";
 import Capture from "./pages/Capture";
-import Tree from "./pages/handleTree";
+import HandleTree from "./pages/handleTree.tsx";
 
 const App = () => {
   return (
@@ -11,7 +11,7 @@ const App = () => {
       background: "rgba(0, 28, 29, 1)",
       height: "6vh",
     }} className="flex min-h-[40px] p-3 items-center z-[6969]">
-      <img draggable="false" src="/src/assets/logo.svg" style={{height: "3vh", minHeight: "20px", maxHeight: "23px"}} className="pl-[5px]"></img>
+      <img draggable="false" src="/src/assets/logo.svg" style={{height: "3vh", minHeight: "20px", maxHeight: "23px"}} className="pl-[10px]"></img>
     </div>
 
     <Router>
@@ -19,7 +19,7 @@ const App = () => {
         <Route path="/" element={<Title />} />
         <Route path="/capture" element={<Capture />} />
         <Route path="/creator/create" element={<New />} />
-        <Route path="/t/:id" element={<Tree />} />
+        <Route path="/t/:id" element={<HandleTree />} />
         {/* 404 Page */}
       <Route path="*" element={
         <div className="items-center flex-col justify-center" id="common-bg">

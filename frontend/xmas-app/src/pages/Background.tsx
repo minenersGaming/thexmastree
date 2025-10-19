@@ -17,18 +17,16 @@ const Background = ({ var: bgIndex }: { var: number }) => {
 
   return (
     <>
-      <div className="fixed bottom-0 z-[4] flex flex-col items-end w-full pointer-events-none">
-
+      <div className="fixed bottom-0 z-[4] flex flex-col items-end w-full pointer-events-none justify-center">
+        
         <img
           draggable="false"
-          className="relative z-[3] max-w-[none] overflow-visible"
+          className="relative z-[3] max-w-[none] overflow-visible h-auto"
           src={`/src/assets/background/${bgCurrent}.svg`}
           style={{
             width: bgCurrentWidth,
-            height: "auto",
           }}
         />
-
         <div className="bg-white z-[2] w-full h-[26vh]"></div>
       </div>
 

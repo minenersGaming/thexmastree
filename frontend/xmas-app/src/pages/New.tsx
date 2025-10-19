@@ -22,35 +22,10 @@ const New = () => {
     <div id="common-bg" className="fixed flex flex-col justify-center items-center bottom" style={{overflow: "hidden", width: "auto"}}>
       
       <Background var={bgIndex} />
-      {/**<img draggable="false" className="overflow-visible absolute z-[5] max-w-[none] object-cover" src={`/src/assets/background/${bgCurrent}.svg`} style={{
-        width: bgCurrentWidth,
-      	height: bgCurrentHeight,
-        transform: `translate(${bgCurrentTransX}, ${bgCurrentTransY})`,
-      }}></img>
 
- 
-        <img className="fixed z-[1] transition-all" style={{
-          top: moonY,
-          left: moonX,
-      }}
-        src="/src/assets/moon.svg"></img>**/}
-
-      <div className="flex justify-center fixed z-20 w-[100vw] translate-y-[-1vh]">
-        <img draggable="false" src="/src/assets/tree.svg"></img>
+      <div className="flex justify-center fixed z-20 w-[100vw] bottom-[20vh]">
+        <img draggable="false" src="/src/assets/tree.svg" ></img>
       </div>
-      {/** Here's the ground 
-       * <div id="ground" className="fixed bg-white bottom z-10 w-[100vw] h-[26vh]"></div>**/}
-      {/**<style>
-        {`
-        #ground {
-          height: 26vh;
-          }
-        @media (max-width: 385px) {
-          #ground {
-            height: 36vh;
-          }
-        `}
-      </style>*/}
       <div className="fixed bottom left-0 z-30 w-[100vw] h-[92vh]">
         <div className="flex flex-col justify-between h-full">
           <div className="anim-intro-fadeIn z-[80] flex items-center jsutify-around flex-col">
