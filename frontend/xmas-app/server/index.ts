@@ -6,7 +6,7 @@ import { dirname, join } from "path";
 
 const app = express();
 app.use(express.json());
-app.use(cors({ origin: "http://localhost:5173", credentials: true })); // Allow frontend
+app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -16,13 +16,11 @@ const YOUR_CLIENT_ID =
 const YOUR_CLIENT_SECRET = "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";
 const YOUR_REDIRECT_URL = "http://localhost:3000/auth/google/callback";
 
-// ✅ Step 1: Redirect user to Google's OAuth consent screen
 app.get("/auth/google", (req, res) => {
   const url = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${YOUR_CLIENT_ID}&redirect_uri=${YOUR_REDIRECT_URL}&response_type=code&scope=profile email`;
   res.redirect(url);
 });
 
-// ✅ Step 2: Handle Google's redirect back to your server
 app.get("/auth/google/callback", async (req, res) => {
   const { code } = req.query;
   if (!code) return res.status(400).send("Missing code");
@@ -44,9 +42,8 @@ app.get("/auth/google/callback", async (req, res) => {
       }
     );
 
-    console.log("✅ Logged in user:", profile);
+    console.log("Logged in user:", profile);
 
-    // ✅ Redirect to React app
     res.redirect(
       `http://localhost:5173/creator/create?user=${encodeURIComponent(
         JSON.stringify(profile)
@@ -58,8 +55,6 @@ app.get("/auth/google/callback", async (req, res) => {
   }
 });
 
-
-// ✅ Health check
 app.get("/", (req, res) => {
   res.send("Server running... 🔥");
 });
