@@ -3,8 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 export function Landing() {
   const handleGoogleSignIn = () => {
-    // Redirect to Express server Google OAuth
-    window.location.href = "/auth/google";
+    window.location.href = "http://localhost:3000/auth/google";
     
   };
   return (
