@@ -3,6 +3,7 @@ import Title from "./pages/Title";
 import New from "./pages/New.tsx";
 import Capture from "./pages/Capture";
 import HandleTree from "./pages/handleTree.tsx";
+import { Landing } from './landing.tsx'
 
 const App = () => {
   return (
