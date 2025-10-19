@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 export function Landing() {
   const handleGoogleSignIn = () => {
     // Redirect to Express server Google OAuth
-    window.location.href = "http://localhost:3000/auth/google";
+    window.location.href = "/auth/google";
     
   };
   return (
@@ -27,9 +27,9 @@ export function Landing() {
           draggable="false"
           src="src/assets/g-icon.svg"
           alt="Google Icon"
-          className="p-2 pl-3"
+          className="p-2"
         />
-        <span className="pt-2">{"SIGN IN WITH GOOGLE"}</span>
+        <span className="text-[15px]">SIGN IN WITH GOOGLE</span>
       </span>
     </button>
   );
