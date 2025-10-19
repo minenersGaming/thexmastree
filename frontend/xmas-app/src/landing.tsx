@@ -2,19 +2,14 @@ import { useGoogleLogin } from "@react-oauth/google";
 import { useNavigate } from "react-router-dom";
 
 export function Landing() {
- const navigate = useNavigate();
-
-  const login = useGoogleLogin({
-    onSuccess: (tokenResponse) => {
-      console.log(tokenResponse);
-      navigate("/creator/create");
-    },
-    onError: () => console.log("Login Failed"),
-  });
-
+  const handleGoogleSignIn = () => {
+    // Redirect to Express server Google OAuth
+    window.location.href = "http://localhost:3000/auth/google";
+    
+  };
   return (
     <button
-      onClick={() => login()}
+      onClick={() => handleGoogleSignIn()}
       style={{
         background:
           "linear-gradient(260deg, rgba(201, 84, 51, 1) 0%, rgba(201, 51, 60, 1) 50%, rgba(144, 30, 37, 1) 100%)",
