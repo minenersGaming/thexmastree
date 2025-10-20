@@ -55,7 +55,7 @@ app.get("/auth/google/callback", async (req, res) => {
 
     // ส่งกลับไปหน้า frontend พร้อมข้อมูล user
     res.redirect(
-      `http://localhost:5173/creator/create?user=${encodeURIComponent(
+      `http://localhost:5173/create?user=${encodeURIComponent(
         JSON.stringify(profile)
       )}`
     );
