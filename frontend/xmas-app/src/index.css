@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Milonga&family=Noto+Sans+Thai:wght@100..900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -48,6 +49,7 @@ body {
   background: var(--sky-intro, radial-gradient(89.44% 41.26% at 50% 54.46%, #00504C 0%, #012E34 100%));
   position: relative;
 }
+
 .sky-intro {
   background: radial-gradient(89.44% 41.26% at 50% 54.46%, #00504C 0%, #012E34 100%);
 }
@@ -72,6 +74,10 @@ body {
 
 .font-noto-sans-thai {
     font-family: 'Noto Sans Thai';
+}
+
+.font-milonga {
+    font-family: 'Milonga', cursive;
 }
 
 .bottom {

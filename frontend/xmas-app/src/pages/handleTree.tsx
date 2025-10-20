@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
-import Tree from "./DecorTree.tsx";
-import Background from "./Background.tsx";
+import Tree from "../components/Tree.tsx";
+import Background from "../components/Background.tsx";
 
 
 //dummy data, replace with API data later

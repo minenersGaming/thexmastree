@@ -1,5 +1,5 @@
 import {useState} from "react";
-import Background from "./Background";
+import Background from "../components/Background";
 
 /** น่าจะมีไฟล์แยก? */
 const BACKGROUND_NAME = ["60TH YEAR BLD.", "55TH YEAR BLD."]
