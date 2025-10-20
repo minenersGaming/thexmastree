@@ -14,12 +14,13 @@ type DecorOnTreeProps = {
     position: number;
     type: number;
     display?: boolean;
+    displayMessage?: boolean;
     sender?: string;
     message?: string;
 };
 
-const DecorOnTree = ( {position, type, display, sender, message }: DecorOnTreeProps ) => {
-    if (display) {
+const DecorOnTree = ( {position, type, display, displayMessage, sender, message }: DecorOnTreeProps ) => {
+    if (display && position >= 0 && position <= 8) {
         return (<>
 
         <img src={`/src/assets/onTree/${NAME[type]}.svg`} className="absolute w-[55px] pointer-events-none z-[55] scale-100 hover:scale-110" style={{
@@ -28,10 +29,10 @@ const DecorOnTree = ( {position, type, display, sender, message }: DecorOnTreePr
             transform: `rotate(${ROTATION[position]})`,
           }}></img>
 
-          <div className="text-[16px] absolute z-[70] text-center grad-commonred p-2 rounded-full text-white font-bold font-inter-noto shadow-2xl text-nowrap max-w-[150px] overflow-clip"  style={{
+          {displayMessage && (<div className="text-[16px] absolute z-[70] text-center grad-commonred p-2 rounded-full text-white font-bold font-inter-noto shadow-2xl text-nowrap max-w-[150px] overflow-clip"  style={{
             marginTop: BOXTOP[position],
             marginLeft: BOXLEFT[position],
-          }}>{sender}</div>
+          }}>{sender}</div>)}
 
           
         </>);

@@ -17,7 +17,7 @@ const App = () => {
         <Route path="/" element={<Title />} />
         <Route path="/capture" element={<Capture />} />
         <Route path="/create" element={<New />} />
-        <Route path="/t/:id" element={<HandleTree />} />
+        <Route path="/t/:id/*" element={<HandleTree />} />
         {/* 404 Page */}
       <Route path="*" element={
         <Error />
