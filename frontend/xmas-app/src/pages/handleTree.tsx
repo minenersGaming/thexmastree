@@ -21,7 +21,7 @@ export const TREEDATA = {
       "position": 1,
       "type": 2,
       "sender": "TUSC",
-      "message": "Merry Xmas!"
+      "message": "Happy X-mas!"
     }
   ]
 };

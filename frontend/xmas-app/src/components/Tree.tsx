@@ -24,15 +24,15 @@ const Tree = ({ treeData }: TreeProps) => {
       <div className="flex z-[50] w-full justify-center items-center absolute top-0 left-0 h-full pointer-events-none">
         <img draggable="false" src="/src/assets/tree.svg" className="min-w-[362px] w-[362px] h-auto mt-[5vh] z-[50] pointer-events-none overflow-visible"></img>
 
-      <DecorOnTree position={0} type={2} display={true} sender="อย่าหลุดเดดไลน์"/>
-      <DecorOnTree position={1} type={0} display={true} sender="อย่าหลุดเดดไลน์"/>
-      <DecorOnTree position={2} type={1} display={true} sender="อย่าหลุดเดดไลน์"/>
-      <DecorOnTree position={3} type={2} display={true} sender="อย่าหลุดเดดไลน์"/>
-      <DecorOnTree position={4} type={3} display={true} sender="อย่าหลุดเดดไลน์"/>
-      <DecorOnTree position={5} type={4} display={true} sender="อย่าหลุดเดดไลน์"/>
-      <DecorOnTree position={6} type={5} display={true} sender="อย่าหลุดเดดไลน์"/>
-      <DecorOnTree position={7} type={0} display={true} sender="อย่าหลุดเดดไลน์"/>
-      <DecorOnTree position={8} type={1} display={true} sender="อย่าหลุดเดดไลน์"/>
+      <DecorOnTree position={0} type={2} display={true} sender="TUCMC"/>
+      <DecorOnTree position={1} type={0} display={true} sender="TUSC"/>
+      <DecorOnTree position={2} type={1} display={true} sender="ANUSORN"/>
+      <DecorOnTree position={3} type={2} display={true} sender="TUPRO"/>
+      <DecorOnTree position={4} type={3} display={true} sender="TUNSO"/>
+      <DecorOnTree position={5} type={4} display={true} sender="TUOPH"/>
+      <DecorOnTree position={6} type={5} display={true} sender="ARCHIVE"/>
+      <DecorOnTree position={7} type={0} display={true} sender="หมดมุก"/>
+      <DecorOnTree position={8} type={1} display={true} sender="กช. 69 ด่วน"/>
       
       </div>
     </div>

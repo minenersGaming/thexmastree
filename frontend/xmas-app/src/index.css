@@ -80,6 +80,10 @@ body {
     font-family: 'Milonga', cursive;
 }
 
+.font-inter-noto {
+  font-family: 'Inter','Noto Sans Thai';
+}
+
 .bottom {
     bottom: 0;
 }

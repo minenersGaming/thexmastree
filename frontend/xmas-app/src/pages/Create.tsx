@@ -1,5 +1,5 @@
 import {useState} from "react";
-import Background from "../components/Background";
+import Background from "../components/Background.tsx";
 
 /** น่าจะมีไฟล์แยก? */
 const BACKGROUND_NAME = ["60TH YEAR BLD.", "55TH YEAR BLD."]
@@ -23,7 +23,7 @@ const New = () => {
       
       <Background var={bgIndex} />
 
-      <div className="flex justify-center fixed z-20 w-[100vw] bottom-[20vh]">
+      <div className="flex justify-center fixed z-20 w-[100vw] max-w-[400px] bottom-[20vh]">
         <img draggable="false" src="/src/assets/tree.svg" ></img>
       </div>
       <div className="fixed bottom left-0 z-30 w-[100vw] h-[92vh]">
