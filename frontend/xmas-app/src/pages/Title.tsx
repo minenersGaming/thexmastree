@@ -3,7 +3,7 @@
 [/] Title
 [/] Background
 [X] Preview
-[X] Creator View
+[/] Creator View
 [X] Decorate + Self Preview
 [X] Visitor View
 [X] Gift Received

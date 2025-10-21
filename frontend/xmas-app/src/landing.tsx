@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 export function Landing() {
   const handleGoogleSignIn = () => {
     window.location.href = "http://localhost:3000/auth/google";
-    // "/auth/google" O doesn't use port 3000 for dev
+    // "/auth/google" O doesn't use port 3000 for dev 
     
   };
   return (

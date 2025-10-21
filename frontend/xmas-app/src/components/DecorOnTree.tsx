@@ -36,7 +36,7 @@ const DecorOnTree = ( {position, type, display, displayMessage, sender, message 
     if (display && position >= 0 && position <= 8) {
         return (<>
 
-        <img onClick={handleOpen} src={`/src/assets/onTree/${NAME[type]}.svg`} className="absolute w-[55px] z-[55] scale-100 hover:scale-110" style={{
+        <img onClick={handleOpen} src={`/src/assets/onTree/${NAME[type]}.svg`} className="absolute w-[55px] z-[65] scale-100 hover:scale-110" style={{
             marginTop: MARGINTOP[position],
             marginLeft: MARGINLEFT[position],
             transform: `rotate(${ROTATION[position]})`,
@@ -47,7 +47,7 @@ const DecorOnTree = ( {position, type, display, displayMessage, sender, message 
             marginLeft: BOXLEFT[position],
           }}>{sender}</div>)}
 
-          <Facade returnedClosed={handleClosed} isOpen={isClicked}/>
+          {displayMessage ? <Facade returnedClosed={handleClosed} isOpen={isClicked} message={message} sender={sender}/>: <span></span>}
 
           
         </>);

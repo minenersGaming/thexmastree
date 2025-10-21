@@ -10,11 +10,11 @@ const CreatorView = ( {id:string} ) => {
     return <>
     <div className="common-bg">
         <Background var={receivedData.background}/> {/**wait for API*/}
-        <div className="absolute z-[700] flex w-full justify-center top-[20px] anim-intro-fadeIn">
+        <div className="absolute z-[50] flex w-full justify-center top-[20px] anim-intro-fadeIn">
             <div className="flex flex-col text-center">
-                <div className="align-top text-white">
-                    <span className="font-bold font-inter-noto text-[42px]">{receivedData.name}</span>
-                    <span className="font-milonga text-[25px] pl-[5px]">‘s</span>
+                <div className="align-top">
+                    <span className="text-white font-bold font-inter-noto text-[42px]">{receivedData.name}</span>
+                    <span className="text-white font-milonga text-[25px] pl-[5px]">‘s</span>
                 </div>
                 <div className="text-white text-[25px] font-milonga mt-[-8px]">
                     <span>Christmas Tree</span>
