@@ -2,20 +2,20 @@
 export const SAMPLEDATA = {
   "id": "7uCMc",
   "name": "TUCMC",
-  "background": 1,
+  "background": 0,
   "elements": [
     {
       "page": 1,
       "position": 0,
       "type": 0,
-      "sender": "Anusorn",
+      "sender": "TUCMC",
       "message": "Merry Christmas!"
     },
     {
       "page": 1,
       "position": 1,
       "type": 1,
-      "sender": "Anusorn",
+      "sender": "TUSC",
       "message": "Merry Christmas!"
     },
     {
@@ -29,49 +29,49 @@ export const SAMPLEDATA = {
       "page": 1,
       "position": 3,
       "type": 3,
-      "sender": "Anusorn",
+      "sender": "TUOPH 2026",
       "message": "Merry Christmas!"
     },
     {
       "page": 1,
       "position": 4,
       "type": 4,
-      "sender": "TUSC",
+      "sender": "ANUSORN",
       "message": "Happy X-mas!"
     },
     {
       "page": 1,
       "position": 5,
       "type": 5,
-      "sender": "Anusorn",
+      "sender": "TUNSO",
       "message": "Merry Christmas!"
     },
     {
       "page": 1,
       "position": 6,
       "type": 0,
-      "sender": "Anusorn",
+      "sender": "TUPRO",
       "message": "Merry Christmas!"
     },
     {
       "page": 1,
       "position": 7,
       "type": 1,
-      "sender": "Anusorn",
+      "sender": "TUNSO",
       "message": "Merry Christmas!"
     },
     {
       "page": 1,
       "position": 8,
       "type": 2,
-      "sender": "Anusorn",
+      "sender": "ARCHIVE",
       "message": "Merry Christmas!"
     },
     {
       "page": 2,
       "position": 0,
       "type": 3,
-      "sender": "Anusorn",
+      "sender": "หมดมุก",
       "message": "Merry Christmas!"
     },
   ]

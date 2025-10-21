@@ -11,8 +11,17 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
+/**div, img {
+  user-select: "none";
+  -webkit-user-select: "none";
+  -moz-user-select: "none";
+  -ms-user-select: "none";
+  pointer-events: "none";
+}**/
+
 #facade {
     display: none;
+    z-index: 6767;
 }
 
  @media (min-width: 426px) {

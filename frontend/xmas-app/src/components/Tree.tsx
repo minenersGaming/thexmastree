@@ -20,9 +20,10 @@ type TreeElement = {
 type TreeProps = {
   treeData: TreeElement[];
   displayMessage: boolean;
+  animFadeIn?: boolean;
 };
 
-const Tree = ({ treeData, displayMessage }: TreeProps) => {
+const Tree = ({ treeData, displayMessage, animFadeIn }: TreeProps) => {
   const pageElementsList = [
     treeData.find((item) => item.position === 0) ?? blankFiller,
     treeData.find((item) => item.position === 1) ?? blankFiller,
@@ -38,7 +39,7 @@ const Tree = ({ treeData, displayMessage }: TreeProps) => {
   return (<>
 
     <div>
-      <div className="flex z-[50] w-full justify-center items-center absolute top-0 left-0 h-full pointer-events-none">
+      <div draggable="false" className={`flex z-[50] w-full justify-center items-center absolute top-0 left-0 h-full pointer-events-none ${animFadeIn ? "anim-intro-fadeIn" : ""}`}>
         <img draggable="false" src="/src/assets/tree.svg" className="min-w-[362px] w-[362px] h-auto mt-[5vh] z-[50] pointer-events-none overflow-visible"></img>
 
       <DecorOnTree position={pageElementsList[0].position} type={pageElementsList[0].type} display={true} displayMessage={displayMessage} sender={pageElementsList[0].sender}/>

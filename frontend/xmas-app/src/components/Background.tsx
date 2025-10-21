@@ -2,11 +2,11 @@
 const BACKGROUND = ["60thbldg", "55thbldg"];
 
 /** !!!!! TEMPORARY FOR PRE-REL. SESSION !!!!! */
-const WIDTH = ["790px", "500px"]
+const WIDTH = ["820px", "500px"]
 //const HEIGHT = ["auto", "auto"]
 
-const MOON_X = ["55vw", "-140px"];
-const MOON_Y = ["5vh", "-140px"];
+const MOON_X = ["55vw", "-60px"];
+const MOON_Y = ["5vh", "-40px"];
 
 const Background = ({ var: bgIndex }: { var: number }) => {
   const bgCurrentWidth = WIDTH[bgIndex];
@@ -19,19 +19,19 @@ const Background = ({ var: bgIndex }: { var: number }) => {
     <>
       <div className="fixed bottom-0 z-[4] flex flex-col items-end w-full pointer-events-none justify-center">
         
-        <img
+        <div className="flex min-w-[100vw] justify-center"><img
           draggable="false"
-          className="relative z-[3] max-w-[none] max-h-[60vh] overflow-visible h-auto"
+          className="relative z-[3] max-w-[none] max-h-[52vh] overflow-visible h-auto"
           src={`/src/assets/background/${bgCurrent}.svg`}
           style={{
             width: bgCurrentWidth,
           }}
-        />
+        /></div>
         <div className="bg-white z-[2] w-full h-[26vh]"></div>
       </div>
 
       <img draggable="false"
-        className="fixed z-[1] transition-all"
+        className="absolute z-[1] transition-all w-[170px]"
         style={{
           top: moonY,
           left: moonX,

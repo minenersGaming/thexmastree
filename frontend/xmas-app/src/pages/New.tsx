@@ -23,7 +23,7 @@ const New = () => {
       
       <Background var={bgIndex} />
 
-      <div className="flex justify-center fixed z-20 w-[100vw] max-w-[400px] bottom-[20vh]">
+      <div className="flex justify-center fixed z-20 w-[100vw] max-w-[320px] bottom-[20vh]">
         <img draggable="false" src="/src/assets/tree.svg" ></img>
       </div>
       <div className="fixed bottom left-0 z-30 w-[100vw] h-[92vh]">

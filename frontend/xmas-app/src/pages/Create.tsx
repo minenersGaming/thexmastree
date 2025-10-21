@@ -9,7 +9,7 @@ const HandleCreate = () => {
   if (id === "new") {
     return <New />
   } else {
-  return <CreatorView />
+  return <CreatorView id={"tucmc"} />
   };
 }
 

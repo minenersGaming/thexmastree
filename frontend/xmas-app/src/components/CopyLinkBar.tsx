@@ -20,25 +20,20 @@ const CopyLinkBar = () => {
     function UpdateBar() {
         !isExtend && setExtend(true);
     };
-
+    let timer
     useEffect(() => {
-
        function resetBlob() {
         setPopUp(false);
         clearTimeout(timer);
     } 
 
     if (isPopUp) {
-      const timer = setTimeout(() => {
+      timer = setTimeout(() => {
       }, 3000);
       
       return () => resetBlob;
-    } else {
     }
-
-    
-
-  }, [isPopUp]);
+    }, [isPopUp]);
 
     return <>
     <div className="flex w-full justify-center">
