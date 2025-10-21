@@ -8,5 +8,9 @@ To implement this on a local device, it is recommended to run this on terminal.
 cd frontend/xmas-tree
 npm run dev
 ```
+```bash
+cd backend
+npm start
+```
 
 Made by TUCMC 68
