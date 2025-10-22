@@ -2,10 +2,12 @@
 const BACKGROUND = ["60thbldg", "55thbldg"];
 
 /** !!!!! TEMPORARY FOR PRE-REL. SESSION !!!!! */
-const WIDTH = ["820px", "500px"]
+const WIDTH = ["760px", "516px"]
 
-const MOON_X = ["55vw", "-60px"];
+const MOON_X = ["65vw", "-60px"];
 const MOON_Y = ["5vh", "-40px"];
+
+const TRANS_X = ["24px","31px"] //TEMPORARY
 
 const Background = ({ var: bgIndex }: { var: number }) => {
   const bgCurrentWidth = WIDTH[bgIndex];
@@ -19,13 +21,14 @@ const Background = ({ var: bgIndex }: { var: number }) => {
         
         <div className="flex min-w-[100vw] justify-center"><img
           draggable="false"
-          className="relative z-[3] max-w-[none] max-h-[52vh] overflow-visible h-auto"
+          className="relative z-[3] max-w-[none] max-h-[90vh] overflow-visible h-auto"
           src={`/src/assets/background/${bgCurrent}.svg`}
           style={{
             width: bgCurrentWidth,
+            transform: `translateX(${TRANS_X[bgIndex]})`
           }}
         /></div>
-        <div className="bg-white z-[2] w-full h-[26vh]"></div>
+        <div className="bg-white z-[2] w-full h-[25vh]"></div>
       </div>
 
       <img draggable="false"

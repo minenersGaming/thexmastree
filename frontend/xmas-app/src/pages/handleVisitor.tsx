@@ -118,18 +118,24 @@ const HandleTree = () => {
             <span className="anim-intro-fadeIn">
                 <Background var={receivedData.background} />
                 <Tree treeData={pageElements} displayMessage={false} />
-                <div className="z-[150] blank-facade">
-                  <div className="flex flex-col items-center justify-evenly">
-                    <p className="text-white font-inter text-[13px]">Type your name and message below</p>
-                    <div className="grad-commonred text-ivory mb-5 font-inter-noto font-bold py-2 w-[150px] rounded-full text-center">Type your name</div>
+                <div className="z-[150] blank-facade flex flex-row justify-center">
+                  <div className="flex flex-col items-center justify-center mb-[50px]">
+                    <p className="text-white font-inter text-[13px] p-[20px]">Type your name and message below</p>
+                    <div className="grad-commonred text-ivory mb-[20px] font-inter-noto font-bold py-2 w-[150px] rounded-full text-center">Type your name</div>
                     <div className="flex justify-center grad-intro-box rounded-[12px] w-[284px] h-[40px]">
                       <input id="nameInput" placeholder="Type your name here.." maxLength={25} className="border-transparent focus:border-transparent bg-transparent focus:ring-0 outline-none text-ivory font-inter-noto text-center"></input>
                     </div>
-                    <div className="grad-commonred text-ivory mb-5 font-inter-noto font-bold py-2 w-[250px] rounded-full text-center">Type your message</div>
+                    <div className="grad-commonred text-ivory my-[20px] font-inter-noto font-bold py-2 w-[250px] rounded-full text-center">Type your message</div>
                     <div className="flex justify-center grad-intro-box rounded-[12px] w-[284px] h-[280px] pt-[20px]">
                       <textarea id="nameInput" placeholder="Type your message here.." maxLength={450}
                       className="border-transparent focus:border-transparent bg-transparent focus:ring-0 resize-none outline-none text-ivory font-inter-noto text-wrap w-[250px] max-h-[250px] mr-[-5px] overflow-y-scroll scroll-skyintro"></textarea>
                     </div>
+                    <div className="flex justify-end p-[10px]">
+                              <div className="flex flex-row items-center grad-commonred w-[125px] h-[41px] rounded-[20px] justify-center hover:shadow-2xl transition-all">
+                                <p className="font-inter text-white">NEXT</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="21" viewBox="0 0 19 21" fill="none"><path d="M7.125 4.375L12.6667 10.5L7.125 16.625" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                              </div>
+                            </div>
                   </div>
                 </div>
             </span>
@@ -137,6 +143,10 @@ const HandleTree = () => {
           </>;
       } else {}
     }  else {
+        const maxPage = receivedData.elements.length > 0 ? Math.max(...receivedData.elements.map(e => e.page)): 1; //get max of page
+        if (pageNumber > maxPage) {
+          setSearchParams({"page" : String(maxPage)});
+        } 
         return (
           <Routes>
               <Route path="*" element={
@@ -144,13 +154,16 @@ const HandleTree = () => {
                 <div className="common-bg absolute top-0 left-0 w-full h-full">
                   <Background var={receivedData.background} />
                   <Tree treeData={pageElements} displayMessage={true} />
+                  <div className="flex flex-col jusitfy-center absolute bottom-[50px] z-[150] w-full">
+                    <p className="text-[#0A462F] font-inter text-[20.8px] text-center">Page {pageNumber}/{maxPage}</p>
+                  </div>
                   {/** NEED TO REFINE WITH GRAPHIC */}
                     <div className="w-auto h-full left-0 flex flex-col justify-center z-[500] absolute px-[20px] items-center">
-                      <button onClick={prevPg} className={`${pageNumber === 1 ? "invisible" : "visible"}`}><img src="/src/assets/whiteArrow.svg"></img></button>
+                      <button onClick={prevPg} className={`outline-none ${pageNumber === 1 ? "invisible" : "visible"}`}><img draggable="false" src="/src/assets/whiteArrow.svg"></img></button>
                     </div>
-                    <div className="w-auto h-full right-0 flex flex-col justify-center z-[500] absolute px-[20px] items-center">
-                    <button onClick={nextPg} className={`scale-x-[-1] ${pageNumber === 0 ? "invisible" : "visible"}`}><img src="/src/assets/whiteArrow.svg"></img></button>
-                    </div> {/** !!!!!!!!!!!!!!!!!!!!!!!!!! FIX THE PAGENUMBER === 0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */}
+                    <div className="w-auto h-full right-0 flex flex-col justify-center z-[50] absolute px-[20px] items-center">
+                    <button onClick={nextPg} className={`scale-x-[-1] outline-none  ${pageNumber === maxPage ? "invisible" : "visible"}`}><img draggable="false" src="/src/assets/whiteArrow.svg"></img></button>
+                    </div>
                   </div>
                 </>
               } />

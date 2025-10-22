@@ -38,7 +38,7 @@ const Tree = ({ treeData, displayMessage, animFadeIn }: TreeProps) => {
 
   return (<>
 
-    <div>
+    <div> {/** 362px mt-[-1vh] */}
       <div draggable="false" className={`flex z-[50] w-full justify-center items-center absolute top-0 left-0 h-full ${animFadeIn ? "anim-intro-fadeIn" : ""}`}>
         <img draggable="false" src="/src/assets/tree.svg" className="min-w-[362px] w-[362px] h-auto mt-[-1vh] z-[50] overflow-visible"></img>
 
@@ -57,9 +57,6 @@ const Tree = ({ treeData, displayMessage, animFadeIn }: TreeProps) => {
 
         
     </>
-    /**<div className="flex flex-col items-center justify-center common-bg text-ivory font-bold text-5xl font-noto-sans-thai w-[95vw]">
-          {JSON.stringify(treeData.elements[1].sender)}
-        </div>*/
       );
 }
 

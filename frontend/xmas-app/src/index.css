@@ -175,6 +175,7 @@ body {
 
 .scroll-skyintro::-webkit-scrollbar-button {
   visibility: hidden;
+  display: none;
 }
 
 .scroll-skyintro::-webkit-scrollbar-thumb:hover {

@@ -23,14 +23,14 @@ export const SAMPLEDATA = {
       "position": 2,
       "type": 2,
       "sender": "Anusorn",
-      "message": "Merry Christmas!"
+      "message": "เมอรรีคริสต์มาส"
     },
     {
       "page": 1,
       "position": 3,
       "type": 3,
       "sender": "TUOPH 2026",
-      "message": "Merry Christmas!"
+      "message": "เมอรรี Christmas!"
     },
     {
       "page": 1,
@@ -44,35 +44,35 @@ export const SAMPLEDATA = {
       "position": 5,
       "type": 5,
       "sender": "TUNSO",
-      "message": "Merry Christmas!"
+      "message": "Merry คริสต์มาส!"
     },
     {
       "page": 1,
       "position": 6,
       "type": 0,
       "sender": "TUPRO",
-      "message": "Merry Christmas!"
+      "message": "แฮปปี Christmas!"
     },
     {
       "page": 1,
       "position": 7,
       "type": 1,
       "sender": "TUNSO",
-      "message": "Merry Christmas!"
+      "message": "Happy Christmas!"
     },
     {
       "page": 1,
       "position": 8,
       "type": 2,
       "sender": "ARCHIVE",
-      "message": "Merry Christmas!"
+      "message": "สุขสันต์วันคริสต์มาส!"
     },
     {
       "page": 2,
       "position": 0,
       "type": 3,
       "sender": "หมดมุก",
-      "message": "Merry Christmas!"
+      "message": "Merry X-mas!"
     },
   ]
 };

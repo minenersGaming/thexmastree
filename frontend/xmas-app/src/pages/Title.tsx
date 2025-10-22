@@ -4,7 +4,7 @@
 [/] Background
 [X] Preview                   < DUE 23 >
 [/] Creator View
-[X] Decorate + Self Preview   < DUE 22 18:00 >
+[/] Decorate + Self Preview
 [X] Visitor View              < DUE 22 18:00 >
 [X] Gift Received             < DUE 22 18:00 >
 [/] Error
@@ -41,13 +41,8 @@ const Home = () => {
           </div>
 
           <div
-            style={{
-              bottom: "15%",
-              left: "50%",
-              transform: "translate(-50%, 110%)",
-              zIndex: 20,
-            }}
-            className="absolute flex justify-center items-center"
+            style={{transform: "translate(-50%, 110%)",}}
+            className="absolute flex justify-center items-center z-[20] left-[50%] bottom-[15%]"
           >
             <Landing />
           </div>
