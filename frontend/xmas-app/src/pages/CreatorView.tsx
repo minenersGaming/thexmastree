@@ -3,7 +3,7 @@ import CopyLinkBar from "../components/CopyLinkBar.tsx";
 import Tree from "../components/Tree.tsx";
 import { SAMPLEDATA } from "../SAMPLEDATA.tsx"; //wait for API
 
-const CreatorView = ( {id:string} ) => {
+const CreatorView = ( {id} ) => {
     //fetch API every ... ms: something here
     const receivedData = SAMPLEDATA; //wait for API
 

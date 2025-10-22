@@ -1,12 +1,12 @@
 /**
-== CHECK LIST ==
+== FRONTEND PROGRESS CHECKLIST ==
 [/] Title
 [/] Background
-[X] Preview
+[X] Preview                   < DUE 23 >
 [/] Creator View
-[X] Decorate + Self Preview
-[X] Visitor View
-[X] Gift Received
+[X] Decorate + Self Preview   < DUE 22 18:00 >
+[X] Visitor View              < DUE 22 18:00 >
+[X] Gift Received             < DUE 22 18:00 >
 [/] Error
 */
 

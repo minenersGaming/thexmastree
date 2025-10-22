@@ -2,7 +2,7 @@ const Error = () => {
     return (<>
         <div className="items-center flex-col justify-center" id="common-bg">
           <div className="flex flex-col items-center justify-center h-full shadow-2xl ">
-            <img src="/src/assets/cane.svg" className="w-[182.065px] h-[188.57px] flex-shrink-0"></img>
+            <img draggable="false" src="/src/assets/cane.svg" className="w-[182.065px] h-[188.57px] flex-shrink-0"></img>
             <p className="font-noto-sans-thai text-ivory text-[55.156px] font-[700] " style={{
               fontStyle: "normal",
               lineHeight: "normal",

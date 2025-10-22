@@ -19,30 +19,15 @@ const CopyLinkBar = () => {
     const [isPopUp, setPopUp] = useState(false);
     function UpdateBar() {
         !isExtend && setExtend(true);
-    };
-    let timer
-    useEffect(() => {
-       function resetBlob() {
-        setPopUp(false);
-        clearTimeout(timer);
-    } 
-
-    if (isPopUp) {
-      timer = setTimeout(() => {
-      }, 3000);
-      
-      return () => resetBlob;
     }
-    }, [isPopUp]);
 
     return <>
     <div className=" z-[100] flex w-full justify-center">
-        <div className={`text-[13px] font-inter bottom-[100px] text-white absolute z-[40] px-3 py-2 rounded-full 
-        ${isPopUp ? "anim-intro-easeIn" : ""}`} 
+        <div className={`text-[13px] font-inter bottom-[100px] text-white absolute z-[60] px-3 py-2 rounded-full 
+        ${isPopUp ? "anim-intro-easeIn visible" : "invisible"}`} 
         style={{
                 backgroundColor: "rgba(0, 0, 0, 0.50)",
                 backdropFilter: "blur(2px)",
-                visibility: (isPopUp ? "visible" : "hidden"),
                 }}>Link Copied!</div>
         <div onClick={UpdateBar} className="transition-all bottom-[40px] absolute grad-commonred z-[50] text-white font-bold p-3 text-center rounded-full" style={{
             width: (!isExtend ? "200px" : "320px"),

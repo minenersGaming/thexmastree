@@ -11,7 +11,6 @@ const BOXLEFT = ["-180px","250px","-200px","-240px","70px","270px","-300px","90p
 const ROTATION = ["10deg","-15deg","5deg","10deg","5deg","-10deg","15deg","-5deg","-15deg"]
 const NAME = ["yellow","red","tuball","socks","cane","twobells"]
 
-
 type DecorOnTreeProps = {
     position: number;
     type: number;
@@ -36,7 +35,7 @@ const DecorOnTree = ( {position, type, display, displayMessage, sender, message 
     if (display && position >= 0 && position <= 8) {
         return (<>
 
-        <img onClick={handleOpen} src={`/src/assets/onTree/${NAME[type]}.svg`} className="absolute w-[55px] z-[65] scale-100 hover:scale-110" style={{
+        <img draggable="false" onClick={handleOpen} src={`/src/assets/onTree/${NAME[type]}.svg`} className="absolute w-[55px] z-[65] scale-100 hover:scale-110" style={{
             marginTop: MARGINTOP[position],
             marginLeft: MARGINLEFT[position],
             transform: `rotate(${ROTATION[position]})`,

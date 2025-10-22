@@ -12,7 +12,7 @@ const Facade = ({returnedClosed, isOpen, sender, message}) => {
         <div className="flex flex-col justify-center">
             <div className="grad-commonred text-ivory mb-5 font-inter-noto font-bold py-2 rounded-full">From {sender}</div>
             <div className="flex justify-center grad-intro-box rounded-[12px] w-[284px] h-[267px]">
-                <div className="absolute text-ivory text-wrap w-[284px] max-h-[267px] overflow-scroll px-[32px] py-[15px] font-inter-noto text-left scroll-container">
+                <div className="absolute text-ivory text-wrap w-[284px] max-h-[267px] overflow-scroll px-[32px] py-[15px] font-inter-noto text-left scroll-skyintro">
                     {message}
                 </div>
                 <div className="absolute w-[284px] h-8"></div> {/** ADD BLUR FOR TEXT : DIDNT FINISH */}
