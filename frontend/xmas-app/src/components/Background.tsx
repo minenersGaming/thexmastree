@@ -3,14 +3,12 @@ const BACKGROUND = ["60thbldg", "55thbldg"];
 
 /** !!!!! TEMPORARY FOR PRE-REL. SESSION !!!!! */
 const WIDTH = ["820px", "500px"]
-//const HEIGHT = ["auto", "auto"]
 
 const MOON_X = ["55vw", "-60px"];
 const MOON_Y = ["5vh", "-40px"];
 
 const Background = ({ var: bgIndex }: { var: number }) => {
   const bgCurrentWidth = WIDTH[bgIndex];
-  // const bgCurrentHeight = HEIGHT[bgIndex];
   const bgCurrent = BACKGROUND[bgIndex];
   const moonX = MOON_X[bgIndex];
   const moonY = MOON_Y[bgIndex];

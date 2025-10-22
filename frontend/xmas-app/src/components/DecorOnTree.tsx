@@ -1,4 +1,4 @@
-import Modal from "./Modal.tsx";
+import { ITEMNAME } from "../ITEMNAME.tsx";
 import Facade from "./facade.tsx"
 import { useState } from "react";
 
@@ -9,7 +9,7 @@ const BOXTOP = ["-270px","-220px","-90px","150px","90px","-60px","350px","310px"
 const BOXLEFT = ["-180px","250px","-200px","-240px","70px","270px","-300px","90px","300px"]
 
 const ROTATION = ["10deg","-15deg","5deg","10deg","5deg","-10deg","15deg","-5deg","-15deg"]
-const NAME = ["yellow","red","tuball","socks","cane","twobells"]
+const NAME = ITEMNAME
 
 type DecorOnTreeProps = {
     position: number;
@@ -46,7 +46,7 @@ const DecorOnTree = ( {position, type, display, displayMessage, sender, message 
             marginLeft: BOXLEFT[position],
           }}>{sender}</div>)}
 
-          {displayMessage ? <Facade returnedClosed={handleClosed} isOpen={isClicked} message={message} sender={sender}/>: <span></span>}
+          {displayMessage ? <Facade returnedClosed={handleClosed} isOpen={isClicked} message={message} sender={sender}/>: <></>}
 
           
         </>);

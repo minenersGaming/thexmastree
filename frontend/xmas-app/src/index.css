@@ -123,6 +123,19 @@ body {
   animation: fadeIn 1s ease-in forwards;
 }
 
+.anim-outro-easeOut {
+  opacity: 1;
+  animation: fadeOut 1s ease-out;
+}
+
+.blank-facade {
+  background-color: rgba(0, 0, 0, 0.47);
+  backdrop-filter: blur(5.35px);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;

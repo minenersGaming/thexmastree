@@ -9,7 +9,9 @@ const CopyLinkBar = () => {
       await navigator.clipboard.writeText(textToCopy);
       setCopyStatus('success');
       setPopUp(true);
-      setTimeout(() => setCopyStatus(''), 2000); // Clear message after 2 seconds
+      setTimeout(() => setCopyStatus(''), 4000);
+      setTimeout(() => setPopUp(false), 4900);
+      
     } catch (err) {
       setCopyStatus('failed');
     }
@@ -24,7 +26,7 @@ const CopyLinkBar = () => {
     return <>
     <div className=" z-[100] flex w-full justify-center">
         <div className={`text-[13px] font-inter bottom-[100px] text-white absolute z-[60] px-3 py-2 rounded-full 
-        ${isPopUp ? "anim-intro-easeIn visible" : "invisible"}`} 
+        ${copyStatus === "success" ? "anim-intro-easeIn visible" : ( copyStatus === '' && isPopUp ? "anim-outro-easeOut" : "invisible")}`} 
         style={{
                 backgroundColor: "rgba(0, 0, 0, 0.50)",
                 backdropFilter: "blur(2px)",

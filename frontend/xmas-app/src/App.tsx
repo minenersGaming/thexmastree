@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Title from "./pages/Title";
 import HandleCreate from "./pages/Create.tsx";
-import HandleTree from "./pages/handleTree.tsx";
+import HandleTree from "./pages/handleVisitor.tsx";
 import Header from "./components/Header.tsx";
 import Error from "./pages/Error.tsx";
 //import Facade from ".components/facade.tsx";
