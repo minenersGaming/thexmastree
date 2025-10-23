@@ -1,12 +1,31 @@
-import { useGoogleLogin } from "@react-oauth/google";
-import { useNavigate } from "react-router-dom";
+import { auth, googleProvider } from "./firebase";
+import { signInWithPopup } from "firebase/auth";
 
 export function Landing() {
-  const handleGoogleSignIn = () => {
-    window.location.href = "http://localhost:3000/auth/google";
-    // "/auth/google": DON'T FORGET TO CHANGE THIS TO RELATIVE PATH BEFORE RELEASED!
-    
+  const handleGoogleSignIn = async () => {
+    try {
+      const result = await signInWithPopup(auth, googleProvider);
+      const user = result.user;
+      const idToken = await user.getIdToken();
+      console.log(idToken);
+
+      const response = await fetch("http://localhost:3000/user/login", {
+        method: "GET",
+        headers: {
+          authorization: idToken,
+          "Content-Type": "application/json",
+        },
+      });
+      const data = await response.json();
+      console.log(data);
+
+      if (data.redirect) window.location.href = data.redirect;
+    } catch (error) {
+      alert("Google Sign-In Error: " + error);
+      console.error("Google Sign-In Error:", error);
+    }
   };
+
   return (
     <button
       onClick={() => handleGoogleSignIn()}
