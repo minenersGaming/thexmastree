@@ -2,12 +2,13 @@
 
 A Draft for Christmas Event 2025
 
-
 To implement this on a local device, it is recommended to run this on terminal.
+
 ```bash
-cd frontend/xmas-tree
+cd frontend
 npm run dev
 ```
+
 ```bash
 cd backend
 npm start
