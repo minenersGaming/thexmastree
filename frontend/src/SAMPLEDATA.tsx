@@ -14,7 +14,7 @@ export const SAMPLEDATA = {
     {
       "page": 1,
       "position": 1,
-      "type": 1,
+      "type": 0,
       "sender": "TUSC",
       "message": "Merry Christmas!"
     },
@@ -70,6 +70,20 @@ export const SAMPLEDATA = {
     {
       "page": 2,
       "position": 0,
+      "type": 3,
+      "sender": "หมดมุก",
+      "message": "Merry X-mas!"
+    },
+    {
+      "page": 2,
+      "position": 1,
+      "type": 3,
+      "sender": "หมดมุก",
+      "message": "Merry X-mas!"
+    },
+    {
+      "page": 2,
+      "position": 2,
       "type": 3,
       "sender": "หมดมุก",
       "message": "Merry X-mas!"

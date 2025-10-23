@@ -65,6 +65,7 @@ const HandleTree = () => {
                     </span>
                   </div>
                 </>);
+
         } else if (pageNumber == -1) { //PAGE -1: CHOOSE DECORATION
         return <>
         <div className="common-bg absolute top-0 left-0 w-full h-full z-0">
@@ -112,6 +113,7 @@ const HandleTree = () => {
                   </span>
         </div>
         </>
+
       } else if (pageNumber === -3) {
           return <>
           <div className="common-bg absolute top-0 left-0 w-full h-full z-0">
@@ -154,11 +156,11 @@ const HandleTree = () => {
                 <div className="common-bg absolute top-0 left-0 w-full h-full">
                   <Background var={receivedData.background} />
                   <Tree treeData={pageElements} displayMessage={true} />
-                  <div className="flex flex-col jusitfy-center absolute bottom-[50px] z-[150] w-full">
+                  <div className="flex flex-col jusitfy-center absolute bottom-[50px] z-[140] w-full">
                     <p className="text-[#0A462F] font-inter text-[20.8px] text-center">Page {pageNumber}/{maxPage}</p>
                   </div>
                   {/** NEED TO REFINE WITH GRAPHIC */}
-                    <div className="w-auto h-full left-0 flex flex-col justify-center z-[500] absolute px-[20px] items-center">
+                    <div className="w-auto h-full left-0 flex flex-col justify-center z-[50] absolute px-[20px] items-center">
                       <button onClick={prevPg} className={`outline-none ${pageNumber === 1 ? "invisible" : "visible"}`}><img draggable="false" src="/src/assets/whiteArrow.svg"></img></button>
                     </div>
                     <div className="w-auto h-full right-0 flex flex-col justify-center z-[50] absolute px-[20px] items-center">
