@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 export function Landing() {
   const handleGoogleSignIn = () => {
-    window.location.href = "/auth/google";
+    window.location.href = "http://localhost:3000/auth/google";
     // "/auth/google": DON'T FORGET TO CHANGE THIS TO RELATIVE PATH BEFORE RELEASED!
     // http://localhost:3000/auth/google
     
