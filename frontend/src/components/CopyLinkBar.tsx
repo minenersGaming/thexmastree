@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-const CopyLinkBar = () => {
-    const textToCopy = 'https://xmas.tucm.cc/t/ilovetucmc'; //replace with API data
+const CopyLinkBar = ( {id}:{id:string} ) => {
+    const textToCopy = String(`https://xmas.tucm.cc/t/${id}`);
     const [copyStatus, setCopyStatus] = useState('');
 
     const handleCopy = async () => {
@@ -37,7 +37,7 @@ const CopyLinkBar = () => {
         }}>
             <div className="flex flex-row justify-evenly">
                 <p>{ !isExtend ? "Copy Link" : "https://xmas.tucm.cc/t/ilovetucmc" }</p> {/** FIX THE LINK LATER */}
-                <button onClick={handleCopy}><img className="w-[20px]" src="/src/assets/copyTab.svg"></img></button>
+                <button onClick={handleCopy}><img className="w-[20px]" src="/src/assets/icon/copyTabWhite.svg"></img></button>
                 </div>
             </div>
     </div>

@@ -6,7 +6,7 @@
 [/] Creator View
 [/] Decorate + Self Preview
 [X] Visitor View              < DUE 22 18:00 >
-[X] Gift Received             < DUE 22 18:00 >
+[X] Gift Received             < DUE 24 >
 [/] Error
 */
 

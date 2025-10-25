@@ -3,8 +3,9 @@ import { useNavigate } from "react-router-dom";
 
 export function Landing() {
   const handleGoogleSignIn = () => {
-    window.location.href = "http://localhost:3000/auth/google";
+    window.location.href = "/auth/google";
     // "/auth/google": DON'T FORGET TO CHANGE THIS TO RELATIVE PATH BEFORE RELEASED!
+    // http://localhost:3000/auth/google
     
   };
   return (
@@ -25,7 +26,7 @@ export function Landing() {
       <span className="flex items-center justify-center">
         <img
           draggable="false"
-          src="src/assets/g-icon.svg"
+          src="src/assets/icon/g-icon.svg"
           alt="Google Icon"
           className="p-2"
         />

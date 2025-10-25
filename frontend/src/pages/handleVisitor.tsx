@@ -34,7 +34,7 @@ const HandleTree = () => {
     const itemNumber = item ? Number(item): 0;
     const pageElements = receivedData.elements.filter(e => e.page === (pageNumber <= 0 ? 1 : pageNumber));
 
-    if (!(0 <= itemNumber && itemNumber <= 5) || Number.isNaN(itemNumber) && pageNumber === -1 ) {
+    if (!(0 <= itemNumber && itemNumber <= ITEMNAME.length) || Number.isNaN(itemNumber) && pageNumber === -1 ) {
           return <Navigate to="?page=-1&item=0" replace />;
     }
 
@@ -86,19 +86,17 @@ const HandleTree = () => {
                           <div className="flex justify-center flex-col grad-commonred rounded-t-[30px] w-[300px] h-[47px]">{/**red bar at the top */}
                             <span className="font-inter italic text-[22px] ml-[15px] text-white">Choose your item</span>
                           </div>
-                          <div className="flex flex-col justify-center h-[200px] mt-[10px] overflow-y-scroll scroll-decorator">
+                          <div className="flex flex-col justify-center items-start h-[200px] mt-[10px] overflow-y-scroll scroll-decorator">
                             
-                              <div className="flex flex-row justify-evenly">
+                              <div className="flex flex-row flex-wrap justify-evenly justify-items-center pt-[60px]">
                                 <DecoratorBox typeNumber={0} selecting={itemNumber}/>
                                 <DecoratorBox typeNumber={1} selecting={itemNumber}/>
                                 <DecoratorBox typeNumber={2} selecting={itemNumber}/>
-                              </div>
-                              <div className="flex flex-row mt-[10px] justify-evenly">
                                 <DecoratorBox typeNumber={3} selecting={itemNumber}/>
                                 <DecoratorBox typeNumber={4} selecting={itemNumber}/>
                                 <DecoratorBox typeNumber={5} selecting={itemNumber}/>
+                                <DecoratorBox typeNumber={6} selecting={itemNumber}/>
                               </div>
-
                             </div>
 
                             <div className="flex justify-end p-[10px]" onClick={toNextPgDecor}>
@@ -161,10 +159,10 @@ const HandleTree = () => {
                   </div>
                   {/** NEED TO REFINE WITH GRAPHIC */}
                     <div className="w-auto h-full left-0 flex flex-col justify-center z-[50] absolute px-[20px] items-center">
-                      <button onClick={prevPg} className={`outline-none ${pageNumber === 1 ? "invisible" : "visible"}`}><img draggable="false" src="/src/assets/whiteArrow.svg"></img></button>
+                      <button onClick={prevPg} className={`outline-none ${pageNumber === 1 ? "invisible" : "visible"}`}><img draggable="false" src="/src/assets/icon/whiteArrow.svg"></img></button>
                     </div>
                     <div className="w-auto h-full right-0 flex flex-col justify-center z-[50] absolute px-[20px] items-center">
-                    <button onClick={nextPg} className={`scale-x-[-1] outline-none  ${pageNumber === maxPage ? "invisible" : "visible"}`}><img draggable="false" src="/src/assets/whiteArrow.svg"></img></button>
+                    <button onClick={nextPg} className={`scale-x-[-1] outline-none  ${pageNumber === maxPage ? "invisible" : "visible"}`}><img draggable="false" src="/src/assets/icon/whiteArrow.svg"></img></button>
                     </div>
                   </div>
                 </>

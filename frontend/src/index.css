@@ -52,6 +52,14 @@ body {
   position: relative;
 }
 
+.preview-bg {
+  width: 100vw;
+  height: 94vh;
+  overflow: hidden;
+  background: linear-gradient(193deg, #FFF3B5 3.17%, #FFCF95 57.54%, #FFBC6B 106.75%);
+  position: relative;
+}
+
 .decorator-box {
   background: linear-gradient(141deg, rgba(255, 255, 255, 0.81) -24.59%, rgba(255, 255, 255, 0.30) 96.91%);
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
@@ -136,6 +144,14 @@ body {
 .blank-facade {
   background-color: rgba(0, 0, 0, 0.47);
   backdrop-filter: blur(5.35px);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+}
+
+.preview-facade {
+  background-color: (180deg, rgba(255, 243, 181, 0.15) 0%, rgba(232, 142, 33, 0.15) 100%);
+  backdrop-filter: blur(5.56px);
   width: 100vw;
   height: 100vh;
   position: absolute;

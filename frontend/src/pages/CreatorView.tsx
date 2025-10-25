@@ -6,7 +6,7 @@ import { SAMPLEDATA } from "../SAMPLEDATA.tsx"; //wait for API
 const CreatorView = ( {id} ) => {
     //fetch API every ... ms: something here
     const receivedData = SAMPLEDATA; //wait for API
-
+    console.log(id);
     return <>
     <div className="common-bg">
         <Background var={receivedData.background}/> {/**wait for API*/}
@@ -22,7 +22,7 @@ const CreatorView = ( {id} ) => {
             </div>
         </div>
         <Tree treeData={receivedData.elements} displayMessage={true}/>
-        <CopyLinkBar />
+        <CopyLinkBar id={id}/>
     </div>
     </>
 }

@@ -21,7 +21,7 @@ const Background = ({ var: bgIndex }: { var: number }) => {
         
         <div className="flex min-w-[100vw] justify-center"><img
           draggable="false"
-          className="relative z-[3] max-w-[none] max-h-[90vh] overflow-visible h-auto"
+          className="relative z-[3] max-w-[none] max-h-[56vh] overflow-visible h-auto"
           src={`/src/assets/background/${bgCurrent}.svg`}
           style={{
             width: bgCurrentWidth,

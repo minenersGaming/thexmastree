@@ -36,7 +36,7 @@ export const SAMPLEDATA = {
       "page": 1,
       "position": 4,
       "type": 4,
-      "sender": "ANUSORN",
+      "sender": "ครูปราถนา",
       "message": "Happy X-mas!"
     },
     {
@@ -71,21 +71,21 @@ export const SAMPLEDATA = {
       "page": 2,
       "position": 0,
       "type": 3,
-      "sender": "หมดมุก",
+      "sender": "namename",
       "message": "Merry X-mas!"
     },
     {
       "page": 2,
       "position": 1,
       "type": 3,
-      "sender": "หมดมุก",
+      "sender": "longnameeeeeeeeeeee",
       "message": "Merry X-mas!"
     },
     {
       "page": 2,
       "position": 2,
       "type": 3,
-      "sender": "หมดมุก",
+      "sender": "name",
       "message": "Merry X-mas!"
     },
   ]

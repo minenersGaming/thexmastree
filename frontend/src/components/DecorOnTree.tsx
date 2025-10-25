@@ -41,7 +41,7 @@ const DecorOnTree = ( {position, type, display, displayMessage, sender, message 
             transform: `rotate(${ROTATION[position]}) scaleX(${type === 3 ? CANE_FLIPX[position] : "1"})`,
           }}></img>
 
-          {displayMessage && (<div className="text-[15px] absolute z-[70] text-center grad-commonred p-2 rounded-full text-white font-bold font-inter-noto shadow-2xl text-nowrap max-w-[150px] overflow-clip"  style={{
+          {displayMessage && (<div className="text-[15px] absolute z-[70] text-center grad-commonred p-2 rounded-full text-white font-bold font-inter-noto shadow-2xl text-nowrap max-w-[160px] overflow-clip"  style={{
             marginTop: BOXTOP[position],
             marginLeft: BOXLEFT[position],
           }}>{sender}</div>)}
