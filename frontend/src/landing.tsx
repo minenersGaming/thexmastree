@@ -1,12 +1,28 @@
-import { useGoogleLogin } from "@react-oauth/google";
+import { auth, googleProvider } from "./firebase";
+import { signInWithPopup } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
 export function Landing() {
-  const handleGoogleSignIn = () => {
-    window.location.href = "http://localhost:3000/auth/google";
+  const navigate = useNavigate();
+
+  const handleGoogleSignIn = async () => {
+    //window.location.href = "http://localhost:3000/auth/google";
     // "/auth/google": DON'T FORGET TO CHANGE THIS TO RELATIVE PATH BEFORE RELEASED!
     // http://localhost:3000/auth/google
-    
+    const result = await signInWithPopup(auth, googleProvider);
+    const user = result.user;
+    const idToken = await user.getIdToken();
+    console.log(idToken);
+    const response = await fetch("http://localhost:3000/user/check", {
+      method: "GET",
+      headers: {
+        authorization: idToken,
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await response.json(); // { user: email/null, id: number/null }
+    if (data.id !== null) navigate(`/create/${data.id}`);
+    else navigate(`/create/new`);
   };
   return (
     <button
