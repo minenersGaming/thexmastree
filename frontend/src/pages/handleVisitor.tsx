@@ -114,7 +114,7 @@ const HandleTree = () => {
 
       } else if (pageNumber === -3) {
           return <>
-          <div className="common-bg absolute top-0 left-0 w-full h-full z-0">
+          <div className="common-bg absolute top-0 left-0 w-full h-full z-0 ">
             <span className="anim-intro-fadeIn">
                 <Background var={receivedData.background} />
                 <Tree treeData={pageElements} displayMessage={false} />
