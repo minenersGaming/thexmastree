@@ -14,4 +14,6 @@ cd backend
 npm start
 ```
 
+อย่าลืมadd file firebaseSeriveApp.json จาก discord ที่ backend/firebaseSeriveApp.json
+
 Made by TUCMC 68
