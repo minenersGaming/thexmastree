@@ -3,6 +3,7 @@ import CopyLinkBar from "../components/CopyLinkBar.tsx";
 import Tree from "../components/Tree.tsx";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Loader from "./loading.tsx";
 //import { SAMPLEDATA } from "../SAMPLEDATA.tsx"; //wait for API
 
 const CreatorView = () => {
@@ -31,7 +32,8 @@ const CreatorView = () => {
   //fetch API every ... ms: something here
   //const receivedData = SAMPLEDATA; //wait for API
   console.log(id);
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <Loader />;
+
   return (
     <>
       <div className="common-bg">

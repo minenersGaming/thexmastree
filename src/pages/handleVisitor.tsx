@@ -5,19 +5,22 @@ import Background from "../components/Background.tsx";
 import TreeAtDecor from "../components/TreeAtDecor.tsx";
 import DecoratorBox from "../components/DecoratorBox.tsx";
 import { ITEMNAME, DISPLAYITEMNAME } from "../ITEMNAME.tsx";
-import { SAMPLEDATA } from "../SAMPLEDATA.tsx";
+//import { SAMPLEDATA } from "../SAMPLEDATA.tsx";
 import { useEffect, useState } from "react";
+import Loader from "./loading.tsx";
 
 const HandleTree = () => {
   const { id } = useParams(); //for API
-  const [receivedData, setReceivedData] = useState(SAMPLEDATA); // why null not work *** edit
+  const [receivedData, setReceivedData] = useState(null); // why null not work *** edit
   const [searchParams, setSearchParams] = useSearchParams();
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (!id) return;
+    if (!id || receivedData) return;
     console.log(id);
 
     const fetchData = async () => {
+      setLoading(true);
       try {
         const response = await fetch(
           `/api/tree/element?id=${encodeURIComponent(id)}`
@@ -26,14 +29,20 @@ const HandleTree = () => {
         setReceivedData(data);
       } catch (error) {
         console.error("Error fetching data:", error);
+      } finally {
+        setLoading(false);
       }
     };
     fetchData();
-  }, [id]);
+  }, [id, receivedData]);
+
+  if (loading) {
+    return <Loader />;
+  }
 
   async function addElement(type: number, name: string, message: string) {
     console.log(type, name, message);
-    if (!id) return;
+    if (!id || receivedData) return;
     const response = await fetch(
       `/api/tree/addElement?id=${encodeURIComponent(id)}`,
       {

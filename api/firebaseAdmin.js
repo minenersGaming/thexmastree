@@ -3,13 +3,15 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-admin.initializeApp({
+if (!admin.apps.length) {
+  admin.initializeApp({
     credential: admin.credential.cert({
-        projectId: process.env.project_id,
-        clientEmail: process.env.client_email,
-        privateKey: process.env.private_key?.replace(/\\n/g, "\n"),
-    })
-});
+      projectId: process.env.PROJECT_ID,
+      clientEmail: process.env.CLIENT_EMAIL,
+      privateKey: process.env.PRIVATE_KEY?.replace(/\\n/g, "\n"),
+    }),
+  });
+}
 
 export const db = admin.firestore();
 export const auth = admin.auth();
