@@ -7,20 +7,21 @@ import DecoratorBox from "../components/DecoratorBox.tsx";
 import { ITEMNAME, DISPLAYITEMNAME } from "../ITEMNAME.tsx";
 //import { SAMPLEDATA } from "../SAMPLEDATA.tsx";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Loader from "./loading.tsx";
+import { finished } from "stream";
 
 const HandleTree = () => {
   const { id } = useParams(); //for API
   const [receivedData, setReceivedData] = useState(null); // why null not work *** edit
   const [searchParams, setSearchParams] = useSearchParams();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (!id || receivedData) return;
     console.log(id);
 
     const fetchData = async () => {
-      setLoading(true);
       try {
         const response = await fetch(
           `/api/tree/element?id=${encodeURIComponent(id)}`
@@ -42,7 +43,7 @@ const HandleTree = () => {
 
   async function addElement(type: number, name: string, message: string) {
     console.log(type, name, message);
-    if (!id || receivedData) return;
+    if (!id) return;
     const response = await fetch(
       `/api/tree/addElement?id=${encodeURIComponent(id)}`,
       {
@@ -111,18 +112,18 @@ const HandleTree = () => {
                 receivedData={receivedData}
               />
               <div className="w-full absolute flex flex-row justify-center">
-                <a
-                  href="?page=-1"
+                <Link
+                  to="?page=-1"
                   className="bottom-[-85vh] font-inter font-bold text-[20px] py-3 absolute z-[300] w-[200px] text-center grad-commonred text-white rounded-full self-center"
                 >
                   DECORATE!
-                </a>
-                <a
-                  href="/"
+                </Link>
+                <Link
+                  to="/"
                   className="absolute bottom-[-90vh] grad-commonred text-grad-effect font-bold italic z-[300] text-center underline decoration-[#901E25]"
                 >
                   CREATE YOUR OWN!
-                </a>
+                </Link>
               </div>
             </span>
           </div>
@@ -258,9 +259,9 @@ const HandleTree = () => {
                           alert("Please fill in both name and message!");
                           return;
                         }
-
+                        setLoading(true);
                         await addElement(type, name, message);
-
+                        setReceivedData(null);
                         setSearchParams({ page: "1" });
                       }}
                       className="flex flex-row items-center grad-commonred w-[125px] h-[41px] rounded-[20px] justify-center hover:shadow-2xl transition-all"

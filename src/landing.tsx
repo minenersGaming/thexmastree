@@ -1,9 +1,12 @@
 import { auth, googleProvider } from "./firebase.ts";
 import { signInWithPopup } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import Loader from "./pages/loading.tsx";
 
 export function Landing() {
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
   const handleGoogleSignIn = async () => {
     const result = await signInWithPopup(auth, googleProvider);
@@ -22,9 +25,13 @@ export function Landing() {
     if (data.id !== null) navigate(`/create/${data.id}`);
     else navigate(`/create/new`);
   };
+  if (loading) return <Loader />;
   return (
     <button
-      onClick={() => handleGoogleSignIn()}
+      onClick={() => {
+        setLoading(true);
+        handleGoogleSignIn();
+      }}
       style={{
         background:
           "linear-gradient(260deg, rgba(201, 84, 51, 1) 0%, rgba(201, 51, 60, 1) 50%, rgba(144, 30, 37, 1) 100%)",
